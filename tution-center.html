@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Academy - Excellence in Education</title>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --primary-hover: #1e40af;
+            --accent: #2563eb;
+            --light-bg: #f8fafc;
+            --dark-text: #0f172a;
+            --muted-text: #64748b;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar --- */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted-text);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-btns {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-text {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #eff6ff 0%, #ffffff 70%);
+        }
+
+        .badge {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--muted-text);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .btn-outline {
+            border: 1px solid #cbd5e1;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f5f9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 80px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--muted-text);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* --- Features Section --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card.highlight {
+            background: var(--primary);
+            color: white;
+        }
+
+        .feature-card.highlight p {
+            color: #dbeafe;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card.highlight .icon-box {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--muted-text);
+            font-size: 14px;
+        }
+
+        /* --- Courses Section --- */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .course-card {
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: white;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .course-img {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--muted-text);
+            margin-bottom: 10px;
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .course-desc {
+            font-size: 13px;
+            color: var(--muted-text);
+            margin-bottom: 16px;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        .instructor {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .instructor i {
+            color: var(--primary);
+        }
+
+        /* --- Wall of Fame Section --- */
+        .fame-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .fame-card {
+            height: 300px;
+            border-radius: var(--radius);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+            box-shadow: var(--card-shadow);
+        }
+
+        .fame-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+        }
+
+        .fame-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .fame-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .fame-info p {
+            font-size: 12px;
+            color: #cbd5e1;
+        }
+
+        .fame-badge {
+            background: var(--primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        /* --- Fee Structure Section --- */
+        .fee-table-wrapper {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            overflow-x: auto;
+            box-shadow: var(--card-shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 16px 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 14px;
+            color: var(--muted-text);
+        }
+
+        td strong {
+            color: var(--dark-text);
+        }
+
+        /* --- Open Day / Banner --- */
+        .banner {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 80px;
+        }
+
+        .banner-text {
+            flex: 1;
+        }
+
+        .banner-text h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .banner-text p {
+            color: var(--muted-text);
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .time-box {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .time-box small {
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .banner-img img {
+            max-width: 350px;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* --- Contact Us Section --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            color: var(--muted-text);
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 60px 24px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col a {
+            text-decoration: none;
+            color: var(--muted-text);
+            font-size: 13px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .newsletter input {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 50px;
+            font-size: 12px;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--muted-text);
+            font-size: 12px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 36px; }
+            .stats { flex-direction: column; gap: 20px; }
+            .banner { flex-direction: column; }
+            .contact-container { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i> Elite<span>Academy</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courses">Classes & Tuition</a></li>
+                <li><a href="#fame">Success Stories</a></li>
+                <li><a href="#fees">Fee Structure</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#contact" class="btn-text">Portal</a>
+                <a href="#contact" class="btn-primary">Apply Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="badge"><i class="fa-solid fa-star"></i> Best Tuition & Academy Coaching</span>
+        <h1>Your Pathway to <span>Academic Success</span></h1>
+        <p>Providing quality coaching for School Tuition, Matric, ICS, Pre-Medical, and Pre-Engineering with experienced subject specialists.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary">Enroll Today</a>
+            <a href="#courses" class="btn-outline">View Classes</a>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <h3>99%</h3>
+                <p>Pass Rate</p>
+            </div>
+            <div class="stat-item">
+                <h3>2,500+</h3>
+                <p>Students Taught</p>
+            </div>
+            <div class="stat-item">
+                <h3>12+</h3>
+                <p>Years Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>Why Choose Elite Academy?</h2>
+            <p>We provide focused learning for young kids and comprehensive preparation for board exams.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <h3>Expert Teachers</h3>
+                <p>Experienced subject specialists for Physics, Chemistry, Math, Biology, and Computer Science.</p>
+            </div>
+            <div class="feature-card highlight">
+                <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
+                <h3>Regular Tests & Papers</h3>
+                <p>Weekly test series, monthly evaluations, and board pattern mock exams for guaranteed results.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-child"></i></div>
+                <h3>Junior Tuition Care</h3>
+                <p>Special attention for Class 1 to 8 students with homework support and base building.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses / Classes Section -->
+    <section id="courses">
+        <div class="section-title">
+            <h2>Classes & Tuition Programs</h2>
+            <p>Select your class or group for complete session details.</p>
+        </div>
+        <div class="courses-grid">
+            <!-- 1. Junior Tuition -->
+            <div class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');">
+                    <span class="tag">Junior Coaching</span>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-star" style="color: #f59e0b;"></i> 4.9</span>
+                        <span>Class 1st to 8th</span>
+                    </div>
+                    <div class="course-title">Primary & Middle Tuition</div>
+                    <div class="course-desc">Daily homework support, base building in Math, English & Science for school kids.</div>
+                    <div class="course-footer">
+                        <div class="instructor"><i class="fa-solid fa-user-pen"></i> Female Teachers Available</div>
+                        <a href="#contact" class="btn-text" style="color: var(--primary);">Join &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Matric (9th & 10th) -->
+            <div class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80');">
+                    <span class="tag">Matriculation</span>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-star" style="color: #f59e0b;"></i> 5.0</span>
+                        <span>9th & 10th Science/Arts</span>
+                    </div>
+                    <div class="course-title">Matric Prep Session</div>
+                    <div class="course-desc">Complete textbook coverage, practicals guidance, and board past paper revision.</div>
+                    <div class="course-footer">
+                        <div class="instructor"><i class="fa-solid fa-book"></i> Board Exam Specialists</div>
+                        <a href="#contact" class="btn-text" style="color: var(--primary);">Join &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ICS -->
+            <div class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80');">
+                    <span class="tag">Intermediate</span>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-star" style="color: #f59e0b;"></i> 4.9</span>
+                        <span>11th & 12th ICS</span>
+                    </div>
+                    <div class="course-title">ICS (Computer Science)</div>
+                    <div class="course-desc">Computer Science, Math, Physics / Statistics coaching with practical coding basics.</div>
+                    <div class="course-footer">
+                        <div class="instructor"><i class="fa-solid fa-laptop-code"></i> IT Specialists</div>
+                        <a href="#contact" class="btn-text" style="color: var(--primary);">Join &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Pre-Medical -->
+            <div class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80');">
+                    <span class="tag">Intermediate</span>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-star" style="color: #f59e0b;"></i> 5.0</span>
+                        <span>11th & 12th Medical</span>
+                    </div>
+                    <div class="course-title">FSc Pre-Medical</div>
+                    <div class="course-desc">In-depth Biology, Chemistry, and Physics coaching with MDCAT foundation tips.</div>
+                    <div class="course-footer">
+                        <div class="instructor"><i class="fa-solid fa-user-doctor"></i> Medical Faculty</div>
+                        <a href="#contact" class="btn-text" style="color: var(--primary);">Join &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Pre-Engineering -->
+            <div class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80');">
+                    <span class="tag">Intermediate</span>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span><i class="fa-solid fa-star" style="color: #f59e0b;"></i> 4.8</span>
+                        <span>11th & 12th Engg.</span>
+                    </div>
+                    <div class="course-title">FSc Pre-Engineering</div>
+                    <div class="course-desc">Master Advanced Mathematics, Physics, and Chemistry for top university entrance.</div>
+                    <div class="course-footer">
+                        <div class="instructor"><i class="fa-solid fa-gear"></i> Engg. Specialists</div>
+                        <a href="#contact" class="btn-text" style="color: var(--primary);">Join &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wall of Fame -->
+    <section id="fame">
+        <div class="section-title">
+            <h2>Wall of Fame</h2>
+            <p>Our top position holders in Board Examinations.</p>
+        </div>
+        <div class="fame-grid">
+            <div class="fame-card" style="background-image: url('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80');">
+                <div class="fame-info">
+                    <span class="fame-badge">1048 / 1100</span>
+                    <h4>Zain Malik</h4>
+                    <p>FSc Pre-Medical</p>
+                </div>
+            </div>
+            <div class="fame-card" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80');">
+                <div class="fame-info">
+                    <span class="fame-badge">1032 / 1100</span>
+                    <h4>Sara Khan</h4>
+                    <p>ICS Group</p>
+                </div>
+            </div>
+            <div class="fame-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80');">
+                <div class="fame-info">
+                    <span class="fame-badge">1025 / 1100</span>
+                    <h4>Ali Raza</h4>
+                    <p>Pre-Engineering</p>
+                </div>
+            </div>
+            <div class="fame-card" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80');">
+                <div class="fame-info">
+                    <span class="fame-badge">1060 / 1100</span>
+                    <h4>Ayesha Ahmed</h4>
+                    <p>Matric (10th Class)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure Section (Updated in PKR) -->
+    <section id="fees">
+        <div class="section-title">
+            <h2>Fee Structure</h2>
+            <p>Affordable and transparent monthly tuition fees for all classes.</p>
+        </div>
+        <div class="fee-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class / Program</th>
+                        <th>Subjects</th>
+                        <th>Registration Fee</th>
+                        <th>Monthly Fee</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Junior Tuition (Class 1 - 5)</strong></td>
+                        <td>All Subjects</td>
+                        <td>Rs. 1,000</td>
+                        <td><strong>Rs. 3,500 / month</strong></td>
+                        <td><a href="#contact" class="btn-primary" style="padding: 6px 16px; font-size: 12px;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Middle Tuition (Class 6 - 8)</strong></td>
+                        <td>All Subjects</td>
+                        <td>Rs. 1,000</td>
+                        <td><strong>Rs. 4,500 / month</strong></td>
+                        <td><a href="#contact" class="btn-primary" style="padding: 6px 16px; font-size: 12px;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matric (9th & 10th)</strong></td>
+                        <td>Science Group (Full)</td>
+                        <td>Rs. 1,500</td>
+                        <td><strong>Rs. 6,000 / month</strong></td>
+                        <td><a href="#contact" class="btn-primary" style="padding: 6px 16px; font-size: 12px;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ICS (11th & 12th)</strong></td>
+                        <td>Comp, Math, Phys / Stat</td>
+                        <td>Rs. 2,000</td>
+                        <td><strong>Rs. 7,500 / month</strong></td>
+                        <td><a href="#contact" class="btn-primary" style="padding: 6px 16px; font-size: 12px;">Register</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>FSc Pre-Medical / Pre-Engineering</strong></td>
+                        <td>Bio/Math, Chem, Phys</td>
+                        <td>Rs. 2,000</td>
+                        <td><strong>Rs. 8,000 / month</strong></td>
+                        <td><a href="#contact" class="btn-primary" style="padding: 6px 16px; font-size: 12px;">Register</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Open Day Banner -->
+    <section>
+        <div class="banner">
+            <div class="banner-text">
+                <h2>New Admissions Open For 2026 Session!</h2>
+                <p>Register now to reserve your seat. Special 20% discount on first month fee for early bird registrations.</p>
+                <div class="countdown">
+                    <div class="time-box"><span>05</span><small>Days</small></div>
+                    <div class="time-box"><span>12</span><small>Hours</small></div>
+                    <div class="time-box"><span>45</span><small>Mins</small></div>
+                    <div class="time-box"><span>20</span><small>Secs</small></div>
+                </div>
+                <a href="#contact" class="btn-primary">Reserve Your Seat</a>
+            </div>
+            <div class="banner-img">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="New Admissions Students">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Admission & Inquiry Form</h2>
+            <p>Send us your query or register your child today!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Academy Location</h3>
+                <p>Visit us during office hours or call us directly.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Main Boulevard, Main Campus, City</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+92 300 1234567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@eliteacademy.edu.pk</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Timing: 02:00 PM - 08:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="admissionForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Student / Parent Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number (WhatsApp)" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Class / Course</option>
+                            <option value="junior">Class 1 to 8 (Junior Tuition)</option>
+                            <option value="matric">9th / 10th (Matric)</option>
+                            <option value="ics">ICS (11th / 12th)</option>
+                            <option value="medical">FSc Pre-Medical</option>
+                            <option value="engineering">FSc Pre-Engineering</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="3" placeholder="Additional details or questions..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="margin-bottom: 12px;"><i class="fa-solid fa-graduation-cap"></i> Elite<span>Academy</span></a>
+                <p style="color: var(--muted-text); font-size: 13px;">Quality education and coaching for brighter futures.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Courses</h4>
+                <ul>
+                    <li><a href="#courses">Junior Tuition</a></li>
+                    <li><a href="#courses">Matric Science</a></li>
+                    <li><a href="#courses">ICS Computer</a></li>
+                    <li><a href="#courses">FSc Pre-Medical/Engg</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#fame">Top Students</a></li>
+                    <li><a href="#fees">Fee Structure</a></li>
+                    <li><a href="#contact">Admission Form</a></li>
+                </ul>
+            </div>
+            <div class="footer-col newsletter">
+                <h4>Newsletter</h4>
+                <p style="color: var(--muted-text); font-size: 13px;">Get updates on new sessions & test series.</p>
+                <input type="email" placeholder="Your Email">
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 EliteAcademy Coaching. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Handling -->
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Shukriya! Aap ki inquiry receive ho gayi hai. Hum jald aap se rabta karenge.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
